@@ -21,7 +21,7 @@ namespace DemoNetcore.Controllers
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
-            return "value";
+            return "value2";
         }
 
         // POST api/values
