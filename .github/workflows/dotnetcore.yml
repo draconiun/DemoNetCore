@@ -10,7 +10,6 @@ env:
   AZURE_WEBAPP_NAME: webgithubdemodev01    # set this to your application's name
   AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
   DOTNET_VERSION: '3.1.101'           # set this to the dot net version to use
-  VAR_BRANCH: 'DEVELOP'           # set this to the dot net version to use
 
 jobs:
   build:
