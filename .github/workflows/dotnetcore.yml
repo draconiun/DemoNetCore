@@ -42,10 +42,9 @@ jobs:
         
   dev-release:
     runs-on: ubuntu-latest
-    environment: Desarrollo
+    needs: build
+    # environment: Desarrollo
     steps:
-    - name: Imprimir
-      run: echo ${{ env.VAR_BRANCH  }} - ${{ secrets.VAR_BRANCH  }}
     - name: Download math result for job 2
       uses: actions/download-artifact@v2
       with:
