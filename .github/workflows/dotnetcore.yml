@@ -35,6 +35,10 @@ jobs:
     - name: dotnet publish
       run: |
         dotnet publish -c Release -o demonetcore
+    - uses: actions/upload-artifact@master
+      with:
+        name: my-artifact
+        path: demonetcore
         
   dev-release:
     runs-on: ubuntu-latest
@@ -42,6 +46,10 @@ jobs:
     steps:
     - name: Imprimir
       run: echo ${{ env.VAR_BRANCH  }} - ${{ secrets.VAR_BRANCH  }}
+    - name: Download math result for job 2
+      uses: actions/download-artifact@v2
+      with:
+        name: my-artifact
     - name: 'Run Azure webapp deploy action using publish profile credentials'
       uses: azure/webapps-deploy@v2
       with: 
