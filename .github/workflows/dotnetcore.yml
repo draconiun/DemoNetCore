@@ -24,7 +24,7 @@ jobs:
       with:
         dotnet-version: ${{ env.DOTNET_VERSION }}
     - name: Imprimir
-      run: echo ${{ env.VAR_BRANCH  }}
+      run: echo ${{ env.VAR_BRANCH  }} - ${{ secrets.VAR_BRANCH  }}
     - name: Install dependencies
       run: dotnet restore
     - name: Build
