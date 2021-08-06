@@ -16,7 +16,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    # environment: Desarrollo
+    #environment: Desarrollo
 
     steps:
     - uses: actions/checkout@v2
@@ -44,8 +44,10 @@ jobs:
     if: ${{ github.ref == 'refs/heads/develop' }}
     runs-on: ubuntu-latest
     needs: build
-    # environment: Desarrollo
+    environment: Desarrollo
     steps:
+    - name: Imprimir
+      run: echo ${{ env.VAR_BRANCH  }} - ${{ secrets.VAR_BRANCH  }}
     - name: Download math result for job 2
       uses: actions/download-artifact@v2
       with:
@@ -61,8 +63,10 @@ jobs:
     if: ${{ github.ref == 'refs/heads/master' }}
     runs-on: ubuntu-latest
     needs: build
-    # environment: Desarrollo
+    environment: Produccion
     steps:
+    - name: Imprimir
+      run: echo ${{ env.VAR_BRANCH  }} - ${{ secrets.VAR_BRANCH  }}
     - name: Download math result for job 2
       uses: actions/download-artifact@v2
       with:
