@@ -41,6 +41,7 @@ jobs:
         path: demonetcore
         
   dev-release:
+    if: ${{ github.ref == 'refs/heads/develop' }}
     runs-on: ubuntu-latest
     needs: build
     # environment: Desarrollo
@@ -57,7 +58,7 @@ jobs:
         package: ${{ github.workspace }}
         
   prod-release:
-    if: ${{ github.ref == 'refs/heads/main' }}
+    if: ${{ github.ref == 'refs/heads/master' }}
     runs-on: ubuntu-latest
     needs: build
     # environment: Desarrollo
