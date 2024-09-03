@@ -47,7 +47,7 @@ jobs:
     # environment: Desarrollo
     steps:
     - name: Download math result for job 2
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4.1.7
       with:
         name: my-artifact
     - name: 'Run Azure webapp deploy action using publish profile credentials'
@@ -64,7 +64,7 @@ jobs:
     # environment: Desarrollo
     steps:
     - name: Download math result for job 2
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4.1.7
       with:
         name: my-artifact
     - name: 'Run Azure webapp deploy action using publish profile credentials'
